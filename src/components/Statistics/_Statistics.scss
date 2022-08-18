@@ -1,0 +1,17 @@
+.statisticsContainer {
+    min-width: 350px;
+    padding: 10px;
+    border: solid black 1px;
+    border-radius: 10px;
+    background-color: aquamarine;
+    font-size: 25px;
+
+    & p {
+    margin: 10px;
+    }
+    
+    & span {
+    color: purple;
+        font-weight: 700;
+    }
+}
