@@ -1,4 +1,4 @@
-import PropTypes, { number } from 'prop-types';
+import PropTypes from 'prop-types';
 import React from 'react';
 import '../../index.scss';
 
@@ -25,9 +25,9 @@ const Statistics = ({ good, neutral, bad, total, feedback }) => (
 export default Statistics;
 
 Statistics.propTypes = {
-  good: number,
-  neutral: number,
-  bad: number,
-  total: number,
-  feedback: number,
+  good: PropTypes.number,
+  neutral: PropTypes.number,
+  bad: PropTypes.number,
+  total: PropTypes.number,
+  feedback: PropTypes.number,
 };
