@@ -56,7 +56,7 @@ class App extends React.Component {
         </Section>
         <Section title="Statistics">
           {this.totalCount() === 0 ? ( 
-            <Notification message="There is no feedback yet :( " />
+            <Notification message="No feedback given" />
         ) : (
         <Statistics
           good={this.state.good}
