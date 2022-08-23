@@ -20,25 +20,13 @@ class App extends React.Component {
       (this.state.good + this.state.neutral + this.state.bad)) *
     100;
 
-  onButtonGood = () => {
+    onButtonLeaveFeedback = feedback => {
     this.setState(prevState => ({
-      good: prevState.good + 1,
+      [feedback]: prevState[feedback] + 1,
     }));
   };
 
-  onButtonNeutral = () => {
-    this.setState(prevState => ({
-      neutral: prevState.neutral + 1,
-    }));
-  };
-
-  onButtonBad = () => {
-    this.setState(prevState => ({
-      bad: prevState.bad + 1,
-    }));
-  };
-
-    totalCount = () => {
+  totalCount = () => {
     return Object.values(this.state).reduce((previousValue, newFeedback) => {
       return previousValue + newFeedback;
     }, 0);
@@ -49,9 +37,8 @@ class App extends React.Component {
       <div className='mainContainer'>
         <Section title="Please leave feedback">
         <FeedbackOptions
-          onButtonGood={this.onButtonGood}
-          onButtonNeutral={this.onButtonNeutral}
-          onButtonBad={this.onButtonBad}
+          options={this.state}
+          onButtonLeaveFeedback={this.onButtonLeaveFeedback}
           />
         </Section>
         <Section title="Statistics">

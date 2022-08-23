@@ -1,18 +1,23 @@
 import React from 'react';
 import '../../index.scss';
 
-const FeedbackOptions = ({ onButtonGood, onButtonNeutral, onButtonBad }) => (
-  <>
-    <button className="button" type="button" onClick={onButtonGood}>
-      Good
-    </button>
-    <button className="button" type="button" onClick={onButtonNeutral}>
-      Neutral
-    </button>
-    <button className="button" type="button" onClick={onButtonBad}>
-      Bad
-    </button>
-  </>
-);
+const FeedbackOptions = ({ options, onButtonLeaveFeedback }) => {
+  const feedbacks = Object.keys(options);
+  return (
+    <>
+      {feedbacks.map(feedback => (
+        <button
+          className="button"
+          key={feedback}
+          type="button"
+          name={feedback}
+          onClick={() => onButtonLeaveFeedback(feedback)}
+        >
+          {feedback}
+        </button>
+      ))}
+    </>
+  );
+};
 
 export default FeedbackOptions;
