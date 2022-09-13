@@ -1,23 +1,17 @@
-import React from 'react';
 import '../../index.scss';
 
 const FeedbackOptions = ({ options, onButtonLeaveFeedback }) => {
-  const feedbacks = Object.keys(options);
-  return (
-    <>
-      {feedbacks.map(feedback => (
-        <button
-          className="button"
-          key={feedback}
-          type="button"
-          name={feedback}
-          onClick={() => onButtonLeaveFeedback(feedback)}
-        >
-          {feedback}
-        </button>
-      ))}
-    </>
-  );
+  return options.map(option => (
+    <button
+      className="button"
+      key={option}
+      type="button"
+      name={option}
+      onClick={() => onButtonLeaveFeedback(option)}
+    >
+      {option}
+    </button>
+  ));
 };
 
 export default FeedbackOptions;
